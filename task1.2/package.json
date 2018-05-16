@@ -12,4 +12,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "de
+    "dev": "npm run start",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
