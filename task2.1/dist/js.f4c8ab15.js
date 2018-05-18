@@ -9671,22 +9671,22 @@ var MyApp = _san2.default.defineComponent({
     template: '' + '<section>' + '<div>' + '<input type="text" name="name" placeholder="姓名  (string)" value="{= name =}">' + '<input type="number" name="age" placeholder="年龄  (number)" value="{= age =}">' + '<input type="text" name="des" placeholder="简介  (string)" value="{= des =}">' + '</div>' + '<div>' + '<span>信息:</span>' + '<button on-click="clear">移除信息</button>' + '</div>' + '<div class="show">' + '<p>姓名: {{name}}</p>' + '<p>年龄: {{age}}</p>' + '<p>简介: {{des}}</p>' + '</div>' + '</section>',
 
     dataTypes: {
-        name: _san.DataTypes.string,
-        age: _san.DataTypes.number,
-        des: _san.DataTypes.string
+        person: _san.DataTypes.shape({
+            name: _san.DataTypes.string,
+            age: _san.DataTypes.number,
+            des: _san.DataTypes.string
+        })
     },
     clear: function clear() {
-        console.log(this);
-    },
-    type: function type() {
-        console.log(this);
+        this.data.set('name', undefined);
+        this.data.set('age', undefined);
+        this.data.set('des', undefined);
     }
 });
 
 var myApp = new MyApp();
 myApp.attach(document.body);
-myApp.type();
-},{"san":3}],4:[function(require,module,exports) {
+},{"san":3}],9:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -9856,5 +9856,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[4,2], null)
+},{}]},{},[9,2], null)
 //# sourceMappingURL=/js.f4c8ab15.map

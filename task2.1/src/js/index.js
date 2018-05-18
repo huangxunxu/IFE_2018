@@ -21,18 +21,18 @@ var MyApp = san.defineComponent({
       +  '</section>',
 
     dataTypes: {
-        name: DataTypes.string,
-        age: DataTypes.number,
-        des: DataTypes.string
+        person: DataTypes.shape({
+            name: DataTypes.string,
+            age: DataTypes.number,
+            des: DataTypes.string
+        })
     },
     clear: function (){
-        console.log(this)
-    },
-    type: function (){
-        console.log(this);
+        this.data.set('name', undefined);
+        this.data.set('age', undefined);
+        this.data.set('des', undefined);
     }
 });
 
 var myApp = new MyApp();
 myApp.attach(document.body);
-myApp.type();
