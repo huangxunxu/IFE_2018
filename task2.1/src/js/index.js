@@ -1,7 +1,6 @@
 import san, {DataTypes} from 'san'; 
 
 var MyApp = san.defineComponent({
-    field: ['name', 'age', 'des'],
     template: ''
       +  '<section>'
       +      '<div>'
@@ -19,7 +18,7 @@ var MyApp = san.defineComponent({
       +          '<p>简介: {{des}}</p>'
       +      '</div>'
       +  '</section>',
-
+    // 检验数据
     dataTypes: {
         person: DataTypes.shape({
             name: DataTypes.string,
@@ -27,6 +26,7 @@ var MyApp = san.defineComponent({
             des: DataTypes.string
         })
     },
+    // 按钮点击后清除数据
     clear: function (){
         this.data.set('name', undefined);
         this.data.set('age', undefined);
