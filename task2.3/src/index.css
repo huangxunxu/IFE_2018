@@ -1,0 +1,10 @@
+.before{
+    width:100px;
+    height:100px;
+    background:blue;
+}
+.after{
+    width:100px;
+    height:100px;
+    background:red;
+}
